@@ -4,11 +4,11 @@ documentation:
 - overrides/*
 
 3rd party:
-- anysrc/inc/*
+- src/inc/*
 
 source:
 - any: ['src/**/*.cpp', 'src/**/*.hpp', 'src/**/*.c', 'src/**/*.h']
-  any: ['!src/inc/*']
+  all: ['!src/inc/*']
 
 ui:
 - src/**/*.ui
