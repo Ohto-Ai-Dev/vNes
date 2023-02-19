@@ -4,7 +4,6 @@
 
 TEMPLATE = app
 TARGET = vNes
-INCLUDEPATH += src/inc/
 
 OBJECTS_DIR = build/obj/
 MOC_DIR = build/
@@ -16,6 +15,10 @@ CONFIG(debug,debug|release) {
 } else {
     DESTDIR = $$absolute_path(bin/release)
 }
+
+QT += core \
+    gui \
+    widgets
 
 # Input
 HEADERS += src/VirtualNES.h
