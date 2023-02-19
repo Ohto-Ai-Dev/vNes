@@ -1,7 +1,7 @@
 site_name: OhtoAi - vNes
-site_url: https://ohto-ai.github.io/vNes
-repo_url: https://github.com/Ohto-Ai/vNes
-site_description: Document for Ohto-Ai/vNes
+site_url: https://ohto-ai-dev.github.io/vNes
+repo_url: https://github.com/Ohto-Ai-Dev/vNes
+site_description: Document for Ohto-Ai-Dev/vNes
 site_author: Ohto-Ai
 
 theme:
