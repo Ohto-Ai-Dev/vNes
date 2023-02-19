@@ -4,11 +4,11 @@ name: Page Deploy
 on:
   push:
     paths:
-      - 'doc/**'
+      - 'docs/**'
       - '.github/workflows/page.yml'
   pull_request:
     paths:
-      - 'doc/**'
+      - 'docs/**'
       - '.github/workflows/page.yml'
 
   # Allows you to run this workflow manually from the Actions tab
