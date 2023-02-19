@@ -1,5 +1,13 @@
+---
+hide:
+  - navigation
+  - toc
+  - footer
+comment
+---
+
 # 相关资料
-# 文档
+## 文档
 
 - [Nintendo Entertainment System Architecture](http://fms.komkon.org/EMUL8/NES.html)  
 - [Standard controller](https://www.nesdev.org/wiki/Standard_controller)  
@@ -10,7 +18,7 @@
 - [使用C++实现FC红白机模拟器 Cartridge 与 Mapper（原理篇）](https://blog.csdn.net/qq_28347599/article/details/119875295)  
 - [实现一个FC模拟器](https://www.jianshu.com/p/6d56359b9ce4/)  
 
-# 项目
+## 项目
 
 - [SimpleNES](https://github.com/amhndu/SimpleNES)  
 - [FCSimulator](https://github.com/HaloOrangeWang/FCSimulator)  
