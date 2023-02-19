@@ -3,10 +3,7 @@ name: Page Deploy
 
 on:
   push:
-    paths:
-      - 'docs/**'
-      - '.github/workflows/page.yml'
-  pull_request:
+    branches: ["master"]
     paths:
       - 'docs/**'
       - '.github/workflows/page.yml'
