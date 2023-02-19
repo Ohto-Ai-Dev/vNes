@@ -1,9 +1,5 @@
 ---
-hide:
-  - navigation
-  - toc
-  - footer
-comment
+comments: true
 ---
 
 # 相关资料
