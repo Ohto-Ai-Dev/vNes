@@ -74,6 +74,13 @@ jobs:
           $tag_name = "${{ github.ref }}" -replace "refs/tags/",""
           echo "package_name=$package_name" >> $GITHUB_OUTPUT
           echo "tag_name=$tag_name" >> $GITHUB_OUTPUT
+          echo "package_name In=$package_name"
+          echo "tag_name In=$tag_name"
+      - name: Debug
+        shell: pwsh
+        run: |
+          echo "package_name=${{ steps.package.outputs.package_name }}"
+          echo "tag_name=${{ steps.package.outputs.tag_name }}"
       # 上传artifacts
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
