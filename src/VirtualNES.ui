@@ -37,12 +37,18 @@
     <property name="title">
      <string>关于(&amp;A)</string>
     </property>
+    <addaction name="actionWebsite"/>
    </widget>
    <addaction name="menu_F"/>
    <addaction name="menu_C"/>
    <addaction name="menu_H"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionWebsite">
+   <property name="text">
+    <string>主页(&amp;W)</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
