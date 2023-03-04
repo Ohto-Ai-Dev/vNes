@@ -1,24 +1,24 @@
-#pragma once
+ï»¿#pragma once
 
 #include "stdint.h"
 
 
 class rominfo_t
 {
-	//´æ·Å½âÎöºóµÄ¿¨´ø»ù±¾ĞÅÏ¢
+	//å­˜æ”¾è§£æåçš„å¡å¸¦åŸºæœ¬ä¿¡æ¯
 public:
-	bool is_vmirror;//ÊÇ·ñË®Æ½ 0Ë®Æ½ 1´¹Ö±
-	bool has_battery;//ÊÇ·ñÓĞµç³ØÖ§³Ö
-	bool is_trainer;//ÊÇ·ñÓĞtrainer
-	bool is_fourScreen;//ÊÇ·ñËÄÆÁ
+	bool is_vmirror;//æ˜¯å¦æ°´å¹³ 0æ°´å¹³ 1å‚ç›´
+	bool has_battery;//æ˜¯å¦æœ‰ç”µæ± æ”¯æŒ
+	bool is_trainer;//æ˜¯å¦æœ‰trainer
+	bool is_fourScreen;//æ˜¯å¦å››å±
 
-	uint8_t program_count;//rom³ÌĞòÊıÁ¿
-	uint8_t cha_count;//romÍ¼ĞÎÊıÁ¿
-	uint8_t* prgrom;//³ÌĞò¾µÏñÖ¸Õë
-	uint8_t* charom;//Í¼Ïñ¾µÏñÖ¸Õë
+	uint8_t program_count;//romç¨‹åºæ•°é‡
+	uint8_t cha_count;//romå›¾å½¢æ•°é‡
+	uint8_t* prgrom;//ç¨‹åºé•œåƒæŒ‡é’ˆ
+	uint8_t* charom;//å›¾åƒé•œåƒæŒ‡é’ˆ
 
-	uint32_t prgrom_size;//³ÌĞò´óĞ¡
-	uint32_t charom_size;//Í¼Ïñ´óĞ¡
+	uint32_t prgrom_size;//ç¨‹åºå¤§å°
+	uint32_t charom_size;//å›¾åƒå¤§å°
 };
 
 
@@ -26,10 +26,10 @@ public:
 class nesheader_t
 {
 public:
-	//´æ·ÅnesµÄÍ·²¿ĞÅÏ¢
-	uint8_t nes[4];//´æ·ÅnesÍ·²¿Ç°ËÄ¸ö×Ö½ÚÊı¾İ,ÑéÖ¤ÊÇ·ñÊÇnesÎÄ¼ş
-	uint8_t prg_bank_count;//³ÌĞò¾µÏñÊıÁ¿
-	uint8_t cha_bank_count;//Í¼Ïñ¾µÏñÊıÁ¿
-	uint8_t mapper_l;//µÍÎ»mapper
-	uint8_t mapper_h;//¸ßÎ»mapper
+	//å­˜æ”¾nesçš„å¤´éƒ¨ä¿¡æ¯
+	uint8_t nes[4];//å­˜æ”¾neså¤´éƒ¨å‰å››ä¸ªå­—èŠ‚æ•°æ®,éªŒè¯æ˜¯å¦æ˜¯nesæ–‡ä»¶
+	uint8_t prg_bank_count;//ç¨‹åºé•œåƒæ•°é‡
+	uint8_t cha_bank_count;//å›¾åƒé•œåƒæ•°é‡
+	uint8_t mapper_l;//ä½ä½mapper
+	uint8_t mapper_h;//é«˜ä½mapper
 };

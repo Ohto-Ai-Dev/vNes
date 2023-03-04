@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "stdint.h"
 #include "Rominfo.h"
@@ -8,5 +8,5 @@ class Mapper
 {
 	rominfo_t * rominfo;
 public:
-	Mapper(rominfo_t* rominfo);//³õÊ¼»¯rominfoµÄÖµ
+	Mapper(rominfo_t* rominfo);//åˆå§‹åŒ–rominfoçš„å€¼
 };

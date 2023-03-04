@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 
 
-#include "stdint.h"//Ê¹ÓÃuint_8ÀàĞÍ Ò»¸ö×Ö½Ú
+#include "stdint.h"//ä½¿ç”¨uint_8ç±»å‹ ä¸€ä¸ªå­—èŠ‚
 #include "Rominfo.h"
 #include "Mapper.h"
 
@@ -9,23 +9,23 @@
 class Cartridge
 {
 private:
-	//¿¨´ø²¿·Ö¹¦ÄÜÊµÏÖ
-	rominfo_t rominfo;//romĞÅÏ¢
+	//å¡å¸¦éƒ¨åˆ†åŠŸèƒ½å®ç°
+	rominfo_t rominfo;//romä¿¡æ¯
 	
 	
 
 public:
-	Cartridge();//¹¹Ôìº¯Êı ³õÊ¼»¯
+	Cartridge();//æ„é€ å‡½æ•° åˆå§‹åŒ–
 
-	bool loadRom(char * rom,int size);//¼ÓÔØ²¢½âÎöRom
+	bool loadRom(char * rom,int size);//åŠ è½½å¹¶è§£æRom
 
-	uint8_t ReadViaCpu(uint16_t address);//Ìá¹©CPU¶Á½Ó¿Ú
+	uint8_t ReadViaCpu(uint16_t address);//æä¾›CPUè¯»æ¥å£
 
-	uint8_t ReadViaPpu(uint16_t address);//Ìá¹©PPU¶Á½Ó¿Ú
+	uint8_t ReadViaPpu(uint16_t address);//æä¾›PPUè¯»æ¥å£
 
-	void WriteViaCpu(uint16_t address,uint8_t data);//Ìá¹©CPUĞ´½Ó¿Ú
+	void WriteViaCpu(uint16_t address,uint8_t data);//æä¾›CPUå†™æ¥å£
 
-	void WriteViaPpu(uint16_t address,uint8_t data);//Ìá¹©PPUĞ´½Ó¿Ú
+	void WriteViaPpu(uint16_t address,uint8_t data);//æä¾›PPUå†™æ¥å£
 };
 
 

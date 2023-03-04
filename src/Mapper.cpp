@@ -1,6 +1,6 @@
-#include "Mapper.h"
+ï»¿#include "Mapper.h"
 
 
-//Mapper¹¹Ôìº¯Êý
+//Mapperæž„é€ å‡½æ•°
 
 Mapper::Mapper(rominfo_t* rominfo) :rominfo(rominfo){}

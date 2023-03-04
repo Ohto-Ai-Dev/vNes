@@ -1,4 +1,4 @@
-#include "Cartridge.h"
+ï»¿#include "Cartridge.h"
 #include "Rominfo.h"
 #include "stdint.h"
 #include "string"
@@ -9,44 +9,44 @@
 bool Cartridge::loadRom(char *rom,int size)
 {
 	if (size < 16)
-	{//ÎÄ¼þÐ¡ÓÚ16¸ö×Ö½Ú¿Ï¶¨´íÎó
+	{//æ–‡ä»¶å°äºŽ16ä¸ªå­—èŠ‚è‚¯å®šé”™è¯¯
 		return false;
 	}
 	nesheader_t* header = (nesheader_t*)rom;
 	if(!(header->nes[0] == 'N'
 		&& header->nes[1]=='E'
 		&& header -> nes[2]=='S'
-		&& header ->nes[3]==0x1a))//ÑéÖ¤Í·ÎÄ¼þÊÇ·ñÊÇNESÎÄ¼þ
+		&& header ->nes[3]==0x1a))//éªŒè¯å¤´æ–‡ä»¶æ˜¯å¦æ˜¯NESæ–‡ä»¶
 	{
 		return false;
 	}
 
-	uint8_t map = header->mapper_l >> 4;//»ñÈ¡mapperµÍËÄÎ»µÄÖµ
-	map = map | header -> mapper_h & 0xf0;//»ñÈ¡mapper¸ßËÄÎ»µÄÖµ
+	uint8_t map = header->mapper_l >> 4;//èŽ·å–mapperä½Žå››ä½çš„å€¼
+	map = map | header -> mapper_h & 0xf0;//èŽ·å–mapperé«˜å››ä½çš„å€¼
 
-	//½«romÐÅÏ¢´æÈërominfoÖÐ
-	rominfo.program_count = header->prg_bank_count;//»ñÈ¡³ÌÐò¾µÏñ¿éÊýÁ¿
-	rominfo.cha_count = header->cha_bank_count;//»ñÈ¡Í¼Ïñ¾µÏñ¿éÊýÁ¿
+	//å°†romä¿¡æ¯å­˜å…¥rominfoä¸­
+	rominfo.program_count = header->prg_bank_count;//èŽ·å–ç¨‹åºé•œåƒå—æ•°é‡
+	rominfo.cha_count = header->cha_bank_count;//èŽ·å–å›¾åƒé•œåƒå—æ•°é‡
 
-	//program Rom´óÐ¡=16kb*ÊýÁ¿
+	//program Romå¤§å°=16kb*æ•°é‡
 	rominfo.prgrom_size = rominfo.program_count * 16 * 1024;
-	//Char Rom´óÐ¡=8kb*ÊýÁ¿
+	//Char Romå¤§å°=8kb*æ•°é‡
 	rominfo.charom_size = rominfo.cha_count * 8 * 1024;
 
 
-	//¶¯Ì¬·ÖÅäÄÚ´æ
+	//åŠ¨æ€åˆ†é…å†…å­˜
 	rominfo.prgrom = new uint8_t[rominfo.prgrom_size];
 	rominfo.charom = new uint8_t[rominfo.charom_size];
 
-	//¸´ÖÆÄÚ´æ¿é ÐèÒªstringÍ·ÎÄ¼þ
-	//µÚÒ»¸ö²ÎÊýÊÇÄ¿µÄµØ£¬¸´ÖÆµ½ÄÄ
-	//µÚ¶þ¸ö²ÎÊýÒª¸´ÖÆµÄÊý¾ÝÔ´
-	//µÚÈý¸ö²ÎÊýÊÇÒª¸´ÖÆµÄ×Ö½ÚÊý
+	//å¤åˆ¶å†…å­˜å— éœ€è¦stringå¤´æ–‡ä»¶
+	//ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯ç›®çš„åœ°ï¼Œå¤åˆ¶åˆ°å“ª
+	//ç¬¬äºŒä¸ªå‚æ•°è¦å¤åˆ¶çš„æ•°æ®æº
+	//ç¬¬ä¸‰ä¸ªå‚æ•°æ˜¯è¦å¤åˆ¶çš„å­—èŠ‚æ•°
 	memcpy(rominfo.prgrom, rom + 16, rominfo.prgrom_size);
 	memcpy(rominfo.charom, rom + 8, rominfo.charom_size);
 
 
-	//ÔÓÏîÉèÖÃ
+	//æ‚é¡¹è®¾ç½®
 	rominfo.is_vmirror = header->mapper_l & 0x1;
 	rominfo.has_battery = (header->mapper_l >> 1) & 0x1;
 	rominfo.is_trainer = (header->mapper_l >> 2) & 0x1;
@@ -55,13 +55,13 @@ bool Cartridge::loadRom(char *rom,int size)
 	return true;
 }
 
-//CPU¶ÁÈ¡PRGµÄRomµØÖ·¿Õ¼ä:0x8000-0xFFFF
+//CPUè¯»å–PRGçš„Romåœ°å€ç©ºé—´:0x8000-0xFFFF
 uint8_t Cartridge::ReadViaCpu(uint16_t address)
 {
 	if (address >= 0x8000)
 	{
-		//Èç¹ûPrgRomÖ»ÓÐÒ»¸ö
-		//Ôò0xC000-0xFFFFÊÇ0x8000-0xBFFFµÄ¾µÏñ
+		//å¦‚æžœPrgRomåªæœ‰ä¸€ä¸ª
+		//åˆ™0xC000-0xFFFFæ˜¯0x8000-0xBFFFçš„é•œåƒ
 		if (rominfo.program_count == 1)
 		{
 			address -= 0x4000;
@@ -71,20 +71,20 @@ uint8_t Cartridge::ReadViaCpu(uint16_t address)
 	return 0;
 }
 
-//PPU¶ÁÈ¡CHRµÄRomµØÖ·¿Õ¼ä:0x0000-0x1FFF
+//PPUè¯»å–CHRçš„Romåœ°å€ç©ºé—´:0x0000-0x1FFF
 uint8_t Cartridge::ReadViaPpu(uint16_t address)
 {
 	return this->rominfo.charom[address];
 }
 
 
-//CPUÐ´ÈëPRGµÄROMµØÖ·¿Õ¼ä
+//CPUå†™å…¥PRGçš„ROMåœ°å€ç©ºé—´
 void Cartridge::WriteViaCpu(uint16_t address,uint8_t data)
 {
 	if (address >= 0x8000)
 	{
-		//Èç¹ûPrgRomÖ»ÓÐÒ»¸ö
-		//Ôò0xC000-0xFFFFÊÇ0x8000-0xBFFFµÄ¾µÏñ
+		//å¦‚æžœPrgRomåªæœ‰ä¸€ä¸ª
+		//åˆ™0xC000-0xFFFFæ˜¯0x8000-0xBFFFçš„é•œåƒ
 		if (rominfo.program_count == 1)
 		{
 			address -= 0x4000;
@@ -94,7 +94,7 @@ void Cartridge::WriteViaCpu(uint16_t address,uint8_t data)
 }
 
 
-//PPUÐ´ÈëCHRµÄROmµØÖ·¿Õ¼ä
+//PPUå†™å…¥CHRçš„ROmåœ°å€ç©ºé—´
 void Cartridge::WriteViaPpu(uint16_t address, uint8_t data)
 {
 	this->rominfo.charom[address] = data;
