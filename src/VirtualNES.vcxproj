@@ -150,8 +150,15 @@
     <QtRcc Include="VirtualNES.qrc" />
     <QtUic Include="VirtualNES.ui" />
     <QtMoc Include="VirtualNES.h" />
+    <ClCompile Include="Cartridge.cpp" />
+    <ClCompile Include="Mapper.cpp" />
     <ClCompile Include="VirtualNES.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cartridge.h" />
+    <ClInclude Include="Mapper.h" />
+    <ClInclude Include="Rominfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

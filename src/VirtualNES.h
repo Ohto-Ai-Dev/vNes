@@ -14,3 +14,5 @@ public:
 private:
     Ui::VirtualNESClass ui;
 };
+
+
