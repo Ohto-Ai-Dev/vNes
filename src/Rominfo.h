@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "stdint.h"
+#include <stdint.h>
 
 /// <summary>
 /// // 存放解析后的卡带基本信息

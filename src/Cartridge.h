@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "stdint.h"						// 使用uint_8类型 一个字节
+#include <stdint.h>                                     // 使用uint_8类型 一个字节
 #include "Rominfo.h"
 #include "Mapper.h"
 

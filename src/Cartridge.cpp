@@ -1,7 +1,7 @@
 ﻿#include "Cartridge.h"
 #include "Rominfo.h"
-#include "stdint.h"
-#include "string"
+#include <stdint.h>
+#include <string>
 #include "Mapper.h"
 #include <stdio.h>
 
