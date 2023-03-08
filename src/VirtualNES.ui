@@ -23,30 +23,36 @@
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_F">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>文件(&amp;F)</string>
     </property>
+    <addaction name="actionLoadNesRom"/>
    </widget>
-   <widget class="QMenu" name="menu_C">
+   <widget class="QMenu" name="menuOption">
     <property name="title">
-     <string>选项(&amp;C)</string>
+     <string>选项(&amp;O)</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menu_H">
+   <widget class="QMenu" name="menuAbout">
     <property name="title">
      <string>关于(&amp;A)</string>
     </property>
     <addaction name="actionWebsite"/>
    </widget>
-   <addaction name="menu_F"/>
-   <addaction name="menu_C"/>
-   <addaction name="menu_H"/>
+   <addaction name="menuFile"/>
+   <addaction name="menuOption"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionWebsite">
    <property name="text">
     <string>主页(&amp;W)</string>
+   </property>
+  </action>
+  <action name="actionLoadNesRom">
+   <property name="text">
+    <string>载入ROM(&amp;L)</string>
    </property>
   </action>
  </widget>
