@@ -8,7 +8,6 @@
 
 bool Cartridge::loadRom(char &rom)
 {
-	
 	long size = 0;
 	FILE* file;
 	file = fopen("Nes", "rb");							// Nes为了方便 暂定 文件名为Nes rb是以二进制打开的只读文件 w是写入 r是只读

@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 #include "stdint.h"
 
 /// <summary>
@@ -19,7 +18,6 @@ public:
 	uint32_t prgrom_size;	// 程序大小
 	uint32_t charom_size;	// 图像大小
 };
-
 
 /// <summary>
 /// //存放nes的头部信息
