@@ -8,7 +8,7 @@ class VirtualNES : public QMainWindow
     Q_OBJECT
 
 public:
-    VirtualNES(QWidget *parent = nullptr);
+    VirtualNES(QWidget* parent = nullptr);
     ~VirtualNES();
 
 private:

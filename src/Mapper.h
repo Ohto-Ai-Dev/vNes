@@ -5,7 +5,7 @@
 
 class Mapper
 {
-	rominfo_t * rominfo;
+    rominfo_t* rominfo;
 public:
-	Mapper(rominfo_t* rominfo);		// 初始化rominfo的值
+    Mapper(rominfo_t* rominfo);		// 初始化rominfo的值
 };
