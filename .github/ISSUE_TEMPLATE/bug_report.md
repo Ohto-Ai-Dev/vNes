@@ -1,38 +1,32 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: 提交报告以帮助我们改进软件
 title: ''
-labels: ''
+labels: 'bug'
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Bug描述**
+简要描述bug内容
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**复现步骤**
+重现bug时的操作步骤:
+例如：
+1. 点击了关闭按钮
+2. 查看程序没有退出
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**预期行为**
+描述你预期会发生的行为
+例如
+1. 点击关闭按钮时，程序应当正常退出
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**截图录屏**
+如有可能，请添加截图或者录屏来帮助我们了解更多关于bug的信息
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**运行环境 (请填写以下信息):**
+ - 系统: [例如 Windows 10]
+ - 软件版本: [例如 v0.0.1]
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+**附件信息**
+可以添加任何额外的必要信息

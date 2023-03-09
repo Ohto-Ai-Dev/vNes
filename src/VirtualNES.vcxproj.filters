@@ -21,6 +21,9 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="nes">
+      <UniqueIdentifier>{5b9b1d94-59e3-4356-9ba2-0685c37ab29f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="VirtualNES.qrc">
@@ -56,6 +59,11 @@
     </ClInclude>
     <ClInclude Include="Mapper.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="nes\NesRom.hpp">
+      <Filter>nes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

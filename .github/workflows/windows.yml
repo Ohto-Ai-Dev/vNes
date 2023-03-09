@@ -70,17 +70,16 @@ jobs:
         run: |
           & scripts\windows-publish.ps1 ${env:archiveName} ${env:targetName}
           # 记录package_name给后续step
-          $name = ${env:archiveName}
-          echo "::set-output name=package_name::$name"
+          $package_name = ${env:archiveName}
           $tag_name = "${{ github.ref }}" -replace "refs/tags/",""
-          echo "::set-output name=tagName::$tag_name"
-      # tag 查询github-Release
+          echo "package_name=$package_name" >> $env:GITHUB_OUTPUT
+          echo "tag_name=$tag_name" >> $env:GITHUB_OUTPUT
       # 上传artifacts
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.package.outputs.package_name }}
-          path: ${{ steps.package.outputs.package_name }}
+          name: ${{ steps.package.outputs.package_name }}.zip
+          path: ${{ steps.package.outputs.package_name }}.zip
       # tag 上传Release
       - name: Upload Release
         if: startsWith(github.event.ref, 'refs/tags/v')
@@ -88,6 +87,6 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{ steps.package.outputs.package_name }}.zip
-          asset_name: ${{ steps.package.outputs.package_name }}_${{ steps.package.outputs.tagName }}.zip
+          asset_name: ${{ steps.package.outputs.package_name }}_${{ steps.package.outputs.tag_name }}.zip
           tag: ${{ github.ref }}
           overwrite: true
